@@ -9,7 +9,7 @@ var routeReg=require('./app/Restaurant_api');
 //-----------------------------------//
                    
 mongoose.connect(database1.database);
-
+app.use(express.static('./public'));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json()); // parse application/json

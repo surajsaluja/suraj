@@ -1,18 +1,24 @@
 var express = require('express');
 var Restaurant_apis = express.Router();
 var mongoose = require('mongoose');
-var Resturant = require('../models/Restaurant_data');
-var Building = require('../models/BuildingData');
-var id;
+//var Resturant = require('../models/Restaurant_data');
+var Restaurant = require('../models/restaurant_schema.js');
+var Restid,Prod_id1;
 var create_id=function(req){
    var date=new Date().toISOString();
-    var id="Rest"+date.substring(8,10)+date.substring(5,7)+date.substring(2,4)+date.substring(11,13)+date.substring(14,16)+date.substring(17,19)+req.body.building_name;
-    return id;
+    Restid="Rest"+date.substring(8,10)+date.substring(5,7)+date.substring(2,4)+date.substring(11,13)+date.substring(14,16)+date.substring(17,19)+req.body.Restaurant_Name;
+    console.log(id);
+    return Restid;
+    
+}
+var create_prod_id=function(req){
+ Prod_id1="Prod"+date.substring(8,10)+date.substring(5,7)+date.substring(2,4)+date.substring(11,13)+date.substring(14,16)+date.substring(17,19)+req.body.Restaurant_Name;
+    console.log(id);
+    return Prod_id1;   
 }
 Restaurant_apis.post('/Registration',function(req,res){
-    if (req.body.building_name) {
-    
-Building.update({Building_Name:req.body.building_name}, {$push: { Restaurants : {phone: req.body.rest_phone, name: req.body.rest_name, status: req.body.rest_status,Restaurant_Id:create_id(req)} } },{ upsert: true }, function(err, data) {
+    if (req.body.Rest_id) {
+Restaurant.update({Restaurant_Id:req.body.Rest_id}, {$push: { Product : {product_name: req.body.product_name, product_price: req.body.product_price, product_tax: req.body.product_tax,product_status:req.body.product_status} } }, function(err, data) {
         if (err) res.status(500).json({
             success: false,
             msg: "Database error"
@@ -38,19 +44,33 @@ Building.update({Building_Name:req.body.building_name}, {$push: { Restaurants : 
 });
 
 Restaurant_apis.post('/addNewBuilding',function(req,res){
-   if(req.body.building_name){
-       var newBuilding=Building({
-           Building_Name:req.body.building_name,
-           Building_Id:req.body.building_id,
-           Building_Address: {    
-                    Street:req.body.street,
+    console.log("Called Add Building");
+    console.log(req.body);
+   if(req.body.Restaurant_Name){
+       var newRestaurant=Restaurant({
+           Restaurant_Name:req.body.Restaurant_Name,
+           Restaurant_Owner:req.body.Restaurant_Owner,
+           Restaurant_Phone:req.body.Restaurant_Phone,
+           Restaurant_email:req.body.Restaurant_email,
+           Restaurant_Status:req.body.Restaurant_Status,           
+           Restaurant_Id:create_id(req),
+           Restaurant_Timings:{
+                        from:req.body.from,
+                        to:req.body.to
+           },
+           Restaurant_Address: {    
+                    Address:req.body.Address,
                     Pincode:req.body.pincode,
                     Area:req.body.Area,
                     City:req.body.city,
                     State:req.body.State
        }
+           
        });
-       newBuilding.save(function(err, data) {
+       console.log("Restaurant Data"+newRestaurant);
+       
+       
+       newRestaurant.save(function(err, data) {
       if (err) {
         res.json({ success: false })
       }
@@ -71,17 +91,34 @@ Restaurant_apis.post('/addNewBuilding',function(req,res){
 
 Restaurant_apis.post('/addItem',function(req,res){
     console.log(req);
-    if(req.body.rest_id){
-
-        Building.update({Restaurants:{Restaurant_Id:req.body.rest_id,}}, {$push: { Products : {product_name: req.body.prod_name, product_tax: req.body.prod_tax,  product_status: req.body.prod_status, product_price:req.body.price} } },{ upsert: true }, function(err, data) {
-        if (err) res.status(500).json({
+    if(req.body.Rest_id){
+        var rest = { 
+            'Products' : {
+                product_name: req.body.Product_name, 
+                product_tax: req.body.product_tax,  
+                product_status: req.body.product_status, 
+                product_price:req.body.Product_price
+               // product_catagory:req.body.product_catagory;
+            }
+        }    
+        Restaurant.update({
+           Restaurant_Id:req.body.Rest_id
+        }, {$push: rest},{ upsert: true }, function(err, data) {
+        if (err) {res.status(500).json({
             success: false,
             msg: "Database error",
             error:err
-        })
+        })}
+            else{
+                res.json({
+                success:true,
+                data:data     
+                })
+               
+            }
         
     })
-                        }
+    }
                         else{
         res.json({
             success:false,

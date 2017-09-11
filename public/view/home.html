@@ -1,0 +1,89 @@
+<div class="home" style="background: url('images/images1.jpg') no-repeat;">
+    <div class="layout-relative-height100 ">
+        <div class="container">
+            <div class="header">
+                <div class="padding-16">
+                    <div class="right">
+                        <button class="button corner-round font-18 border-1 color-white" ng-click="element_show('login-modal')">Login</button>
+                    </div>
+                </div>
+                <div class="logo">
+                    <div class="padding-16 home-logo text-center">
+                        <h1 class="font-60 color-white font-wide text-shadow">Company Name</h1>
+                        <div class="padding-16 row padding-left-right-16">
+                            <div class="padding-16"></div>
+                            <form class="form-inline">
+                                <div class="input-group">
+                                    <span class="input-group-addon font-white font-14 search-icon"><i class="fa fa-search"></i></span>
+                                    <input type="text" class="form-control height-30 padding-16 search-box" size="50" placeholder="Type Delievery Location" required>
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-success height-30 font-14 btn-search" ng-click="submit_form()">Search Restaurant</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+</div>
+<div class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row">
+    <div class="col-sm-3 col-xs-6 padding-16">
+      <span><i class="material-icons">whatshot</i></span>
+      <h4>Hot Food</h4>
+    </div>
+    <div class="col-sm-3 col-xs-6 padding-16">
+      <span><i class="fa fa-motorcycle fa-2x" aria-hidden="true"></i></span>
+      <h4>Fast Delievery</h4>
+    </div>
+    <div class="col-sm-3 col-xs-6 padding-16">
+      <span><i class="fa fa-usd fa-2x"> </i></span>
+      <h4>Value For Money</h4>
+    </div>
+      <div class="col-sm-3 col-xs-6 padding-16">
+     <span><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></span>
+    <h4>Quality Assured</h4>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--Modal Login-->
+
+ <div id="login-modal" class="modal hide">
+  <div class="modal-content animate-zoom" style="padding:32px">
+      <i ng-click="element_hide('login-modal')" class="fa fa-remove right button transparent"></i>
+        <br>
+      <h2 class="font-wide center">Login</h2>
+      <div class="form">
+            <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+                <div class="center">
+    <button type="submit" class="btn btn-success col-md-12">Login</button>
+                </div>
+            </form>
+      </div>
+      <br />    
+      <div class="center forgot-pass padding-16" ng-click="forgot_password()">Forgot Your Password?</div>
+        <hr class="line">
+      <div class="center">
+      <h4>Become A Member</h4>
+          <h5>Join Our Group</h5>
+          <button class="btn btn-info" ng-click="signup()">Signup</button>
+      </div>
+  </div>
+</div>

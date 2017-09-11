@@ -1,0 +1,124 @@
+<div class="register" style="background: url('images/98.jpg') no-repeat;background-size: cover;background-attachment: fixed"></div>
+<div class="container">
+    <div class="row">
+        <form name="registration_form" ng-submit="registration_form.$valid&&submitform()" novalidate>
+
+            <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1 box-shadow margin-top-50 margin-bottom-16 corner-round panel-transparent opacity-1">
+                <div class="center font-Ubuntu font-24 text-center">Add Restaurant</div>
+                <br />
+                <table class="reg_table">
+                    <div class="form-inline">
+                        <tr>
+                            <td><label for="Restaurant_Name" class="font-Roboto font-18 font-500">Restaurant Name</label></td>
+                            <td><input type="text" class="form-control color-black font-Roboto font-300 input-bottom-blue font-18 transparent margin-bottom-16" name="Restaurant_Name" ng-model="Restaurant.Restaurant_Name" required>
+                                <span class="help-message error" ng-messages="registration_form.Restaurant_Name.$error" ng-if="registration_form.$submitted||registration_form.Restaurant_Name.$touched">   
+            <span ng-message="required">Restaurant Name Required</span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="Owner_Name" class="font-Roboto font-18 font-500">Name Of Owner</label></td>
+                            <td><input type="text" class="form-control color-black font-Roboto font-300 input-bottom-blue font-18 transparent margin-bottom-16" name="Owner_Name" ng-model="Restaurant.Restaurant_Owner" required>
+                                <span ng-messages="registration_form.Owner_Name.$error" ng-if="registration-form.$subitted||registration_form.Owner_Name.$touched" class="help-message error">
+            <span ng-message="required">Owner's Name Required</span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="Phone_Number" class="font-Roboto font-18 font-500">Phone Number</label></td>
+                            <td><input type="text" class="form-control color-black font-Roboto font-300 input-bottom-blue font-18 transparent margin-bottom-16" name="Phone_Number" ng-model="Restaurant.Restaurant_Phone" pattern="^[0-9]{10,11}$" required>
+                            <span ng-messages="registration_form.Phone_Number.$error" ng-if="registration-form.$subitted||registration_form.Phone_Number.$touched" class="help-message error">
+            <span ng-message="required">Phone Number Required</span>
+                            </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="Email" class="font-Roboto font-18 font-500">Email Address</label></td>
+                            <td><input type="email" class="form-control color-black font-Roboto font-300 input-bottom-blue font-18 transparent margin-bottom-16" name="Email" ng-model="Restaurant.Restaurant_email" pattern="^[a-zA-Z0-9._]*[@][a-zA-Z]{3,7}[.][a-zA-Z]{2,3}$" placeholder="xyz@abc.com" required>
+                             <span ng-messages="registration_form.Email.$error" ng-if="registration-form.$subitted||registration_form.Email.$touched" class="help-message error">
+            <span ng-message="required">Email Required</span>
+            <span ng-message="pattern">Email Invalid</span>
+                            </span>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td><label class="font-Roboto color-black font-18 font-500">Opening Time</label></td>
+                        <td><input type="time" ng-model="Restaurant.from"></td>
+                        </tr>
+                        <tr>
+                        <td><label class="font-Roboto color-black font-18 font-500">Closing Time</label></td>
+                        <td><input type="datetime-local" ng-model="Restaurant.to"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Restaurant_Address" class="font-Roboto font-18 font-500">Address</label></td>
+                            <td><input type="text" class="form-control color-black font-Roboto font-300 input-bottom-blue font-18 transparent margin-bottom-16" name="Restaurant_Address" ng-model="Restaurant.Address" required>
+                            <span ng-messages="registration_form.Restaurant_Address.$error" ng-if="registration-form.$subitted||registration_form.Restaurant_Address.$touched" class="help-message error">
+            <span ng-message="required">Address Required</span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="catogory" class="font-Roboto font-500 font-18">Catagory</label></td>
+                                <td><div class="height-150 scroll"><input type="checkbox" value="abc" name="catagory" ng-model="Restaurant.Catagory">Hello <br />
+                                    <input type="checkbox" value="abc" name="catagory" class="font-Roboto font-300 font-18 margin-left-16" ng-model="Restaurant.Catagory">Hello <br />
+                                    <input type="checkbox" value="abc" name="catagory" class="font-Roboto font-300 font-18 margin-left-16">Hello <br />
+                                    <input type="checkbox" value="abc" name="catagory" class="font-Roboto font-300 font-18 margin-left-16" ng-model="Restaurant.Catagory">Hello <br />
+                                    <input type="checkbox" value="abc" name="catagory" class="font-Roboto font-300 font-18 margin-left-16" ng-model="Restaurant.Catagory">Hello <br />
+                                    <input type="checkbox" value="abc" name="catagory" class="font-Roboto font-300 font-18 margin-left-16" ng-model="Restaurant.Catagory">Hello <br />
+                                    </div>
+                            </td>
+                            </tr>
+
+                        <tr>
+                            <td><label for="Restaurant_Pincode" class="font-Roboto font-18 font-500">Pincode</label></td>
+                            <td><input type="text" class="form-control color-black font-Roboto font-300 input-bottom-blue font-18 transparent margin-bottom-16" name="Restaurant_Pincode" ng-model="Restaurant.pincode" required>
+                        <span ng-messages="registration_form.Restaurant_Pincode.$error" ng-if="registration-form.$subitted||registration_form.Restaurant_Pincode.$touched" class="help-message error" pattern="^[0-9]{6}$">
+            <span ng-message="required">Pincode Required</span>
+            <span ng-message="pattern">Pincode Invalid</span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="Restaurant_State" class="font-Roboto font-18 font-500">City</label></td>
+                            <td><input type="text" class="form-control color-black font-Roboto font-300 input-bottom-blue font-18 transparent margin-bottom-16" name="Restaurant_City" ng-model="Restaurant.city" pattern="^[A-Za-z]*$" required>
+                            <span ng-messages="registration_form.Restaurant_City.$error" ng-if="registration-form.$subitted||registration_form.Restaurant_City.$touched" class="help-message error">
+            <span ng-message="required">City Required</span>
+            <span ng-message="pattern">Invalid City Name</span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="Restaurant_State" class="font-Roboto font-18 font-500">State</label></td>
+                            <td><input type="text" class="form-control color-black font-Roboto font-300 input-bottom-blue font-18  transparent margin-bottom-16" name="Restaurant_State" ng-model="Restaurant.state" pattern="^[A-Za-z]*$" required>
+                            <span ng-messages="registration_form.Restaurant_State.$error" ng-if="registration-form.$subitted||registration_form.Restaurant_State.$touched" class="help-message error">
+            <span ng-message="required">State Required</span>
+            <span ng-message="pattern">Invalid State Name</span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="Restaurant_Area" class="font-Roboto font-18 font-500">Area</label></td>
+                            <td><input type="text" class="form-control color-black font-Roboto font-300 input-bottom-blue font-18  transparent margin-bottom-16" name="Restaurant_Area" ng-model="Restaurant.Area" required>
+                            <span ng-messages="registration_form.Restaurant_Area.$error" ng-if="registration-form.$subitted||registration_form.Restaurant_Area.$touched" class="help-message error">
+            <span ng-message="required">State Required</span>
+            <span ng-message="pattern">Invalid State Name</span>
+                                </span>
+                            </td>
+                        </tr>
+                        <!--
+            <tr>
+            <td><label for="Restaurant_Name" class="font-Roboto font-18 font-500">Email</label></td>
+            <td><input type="email" class="form-control color-black font-Roboto font-300 input-bottom-blue font-18  transparent margin-bottom-16" name="Restaurant_Name"></td>
+            </tr>
+-->
+                    </div>
+                </table>
+                <div class="center margin-top-16">
+                    <input class="button bg-grey color-black margin-bottom-16 font-wide font-18 font-Roboto margin-right-16" type="submit" value="Register">
+                    <button class="button bg-grey color-black margin-bottom-16 font-wide font-18 font-Roboto">Cancel</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

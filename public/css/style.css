@@ -1,0 +1,640 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,500,700');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:100,300,500,700');
+@import url('https://fonts.googleapis.com/css?family=Dosis:100,300,500,700');
+.content{
+    max-width:980px;
+    margin:auto;
+}
+
+.grey{
+    background-color: grey;
+}
+@media (min-width:993px){
+    hide-large{
+        display:none !important;
+    }
+    .sidebar
+    {
+        display:none!important;
+    }
+	.hide-large{
+        display:none!important
+    }
+    .sidebar.collapse{
+        display:block!important
+    }
+    .w3-modal-content{
+        width:900px;
+    }
+    .cart-summary{
+    position:fixed;
+    top:100;
+    right:0;
+}
+}
+@media (max-width:600px){
+    .w3-modal-content{
+        margin:0 10px;
+        width:auto!important
+    }
+    .w3-modal{
+            padding-top:30px
+    }
+}
+@media (max-width:768px){
+    .w3-modal-content{
+        width:500px
+    }
+    .w3-modal{
+        padding-top:50px
+    }
+    .cart-summary{
+        position: inherit;
+        display: block;
+    }
+}
+@media (max-width:992px){
+    .sidebar-hide{
+        display:none !important;
+    }
+    .sidebar-show{
+        display: block !important;
+    }
+    .main-content{
+        margin-left:0!important;
+        margin-right:0!important;
+    }
+}
+.sidebar{
+    height:100%;
+    width:200px;
+    background-color:white !important;
+    position:fixed!important;
+    z-index:1;
+    overflow:auto;
+}
+.fixed{
+    position:fixed !important;
+}
+.top{
+    top:0;
+    position:fixed;
+    width:100%;
+    z-index:1
+}
+.bottom{
+    bottom:0;
+    position:relative;
+    width:100%;
+    z-index: 1;
+}
+.bar-block{
+    width: 100%;
+    min-width: 100%;
+}
+.container-relative{
+    position: relative;
+}
+.top-right{
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+.padding-16{
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.button{-webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    border:none;
+    display:inline-block;
+    outline:0;
+    padding:8px 16px;
+    vertical-align:middle;
+    overflow:hidden;
+    text-decoration:none;
+    color:inherit;
+    background-color:inherit;
+    text-align:center;
+    cursor:pointer;
+    white-space:nowrap;
+}   
+.font-wide{
+    letter-spacing:4px;
+}
+.sidebar a {
+    font-family: "Roboto", sans-serif;
+}
+h1,h2,h3,h4,h5,h6,.font-wide {
+    font-family: "Montserrat", sans-serif;
+}
+.bar{
+    width:100%;
+    overflow:hidden;
+}
+.bar-item{
+    padding:8px 16px;
+    float:left;
+    width:auto;
+    border:none;
+    outline:none;
+    display:block;
+}
+.bg-white{
+    background-color: white;
+}
+.bg-black{
+    background-color: black;
+    color:white;
+}
+.float-right{
+    float:right!important
+}
+.padding-left-right-16{
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+.corner-round{
+    border-radius: 10px;
+}
+.border-1{
+    border:1px solid black;
+    border-color: inherit !important;
+}
+.overlay{
+    position:fixed;
+    display:none;
+    width:100%;
+    height:100%;
+    top:0;left:0;
+    right:0;bottom:0;
+    background-color:rgba(0,0,0,0.5);
+    z-index:2
+}
+.catagory{
+        background-color: none;
+        height: 300px;
+         box-shadow: 0 3px 16px 0 rgba(0, 0, 0, .11);
+        margin: 10px;
+    }    
+    .list{
+        background-color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 10px;
+         box-shadow:  0 3px 16px 0 rgba(0, 0, 0, .11);
+    }
+.bg-grey{
+    background-color: #f5f5f5;
+}
+    .restaurant_top{
+        background-color: white;
+        border-bottom: 1px solid darkgrey;
+        padding: 10px;
+        padding-bottom: 0px;
+    }
+    .restaurant_number{
+    font-weight: 300;
+        font-style: light;
+    font-size: 12px;
+    margin-top: 8px;
+    display: inline-block;
+        color:#878787;
+    }
+    .restauarant_top_catagory{
+        font-weight: 500 !important;
+        font-size: 16px;
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+    body{
+        font-family: 'Roboto', sans-serif !important;
+        
+    }
+
+    ul {
+   list-style-type: none;
+    padding: 0;
+        margin-bottom: 0px !important;
+    overflow: hidden;
+        -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+li, .sort_span{
+    float: right;
+    display: inline-block;
+    padding: 7px 0 4px 0;
+    margin: 0 10px;
+}
+    li{
+        cursor: pointer;
+        font-weight: 300 !important;
+    }
+    li:hover{
+        color: #2874f0;    
+    }
+
+    .active{
+        color: #2874f0;
+        cursor: default;
+    border-bottom: 2px solid;
+    font-weight: 500 !important;
+    }
+    .sort_span{
+        float: right;
+        background-color: white;
+        cursor: default;
+        font-weight: 500;
+    }
+    .restaurant_panel{
+        background-color: white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+       // border: 1px solid black;
+}
+.shadow-hover{
+  
+    padding: 10px;
+        transition: box-shadow 0.2s ease-in-out;
+    transition-property: box-shadow;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay:initial;
+
+}
+    .shadow-box,.shadow-hover:hover{
+       box-shadow:  3px 3px 16px 0 rgba(0, 0, 0, .11);
+    }
+
+    .restaurant-image{
+        background-color: #eee;
+        height: 125px;
+        margin: 5px;
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        
+    }
+    .Restaurant_Description{
+        margin-top: 20px;
+    }
+    .Restaurant_ItemQty_span{
+        font-weight: 300;
+    }
+    .Restaurant_items_span{
+        font-weight: 500;
+    }
+    .Restaurant_product_types{
+        margin-top: 10px;
+        padding-bottom: 10px;
+        font-weight: 300;
+        border-bottom: 1px solid grey;
+    }
+    .Restaurant_panel_bottom{
+        margin: 10px 0px 10px 10px;
+    }
+    .Restaurant_bottom_section{
+        display: inline-block;
+    }
+    img{
+        width:100%;
+        height: 125px;
+    }
+
+.restaurant-products{
+    margin-top: 20px;
+    margin-bottom: 20px;
+          -webkit-transition-timing-function: ease-in-out;
+       -o-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 200ms;
+       -o-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-property: height, visibility;
+       -o-transition-property: height, visibility;
+          transition-property: height, visibility
+
+}
+.restaurant-item{
+    margin-top: 16px;
+    margin-bottom: 16px;
+    text-align: center !important;
+    font-weight: 100;
+}
+.modal{z-index:4;
+    display:block !important;
+    padding-top:100px;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4)
+}
+.modal-content{
+    margin:auto;
+    background-color:#fff;
+    position:relative;
+    padding:0;
+    outline:0;
+    width:600px;
+}
+.animate-zoom {animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+.show{
+    display: block !important;
+}
+.hide{
+    display: none !important;
+}
+.center{
+    text-align: center;
+}
+.right{
+    float:right!important;
+}
+.transparent,.hover-none:hover{
+    background-color:transparent!important;
+}
+.font-700{
+    font-weight: 700 !important;
+}
+.font-500{
+    font-weight: 500 !important;
+}
+.font-100{
+    font-weight: 100; !important;
+}
+.font-300{
+    font-weight: 300 !important;
+}
+.font-Roboto{
+    font-family: "Roboto", sans-serif !important;
+}
+.font-Dosis{
+    font-family: 'Dosis', sans-serif !important;
+}
+.font-Ubuntu{
+ font-family: 'Ubuntu', sans-serif !important;  
+}
+.font-left{
+    text-align: left !important;
+}
+.font-right{
+    text-align:right !important;
+    padding-right: 0px;
+    margin-right: 0px;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.font-14{
+    font-size: 14px !important;
+}
+.font-18{
+    font-size: 18px !important;
+}
+.font-24{
+    font-size: 24px !important;
+}
+.font-60{
+    font-size: 60px !important;
+}
+.yellow{
+    background-color: yellow !important;
+}
+.border1{
+    border: 1px solid black;
+}
+.button-circle{
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(#fff, #f9f9f9);
+    display: inline-block;
+    border: 1px solid #c2c2c2;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 50%;
+    padding-top: 1px;
+    margin-left:10px;
+    margin-right: 10px;
+}
+.btn-half{
+    width: 49%;
+    padding: 0px;
+    margin: 0px;
+}
+.inline-block-display{
+    display:inline-block;
+}
+.color-white{
+    color:white !important;
+}
+.color-red{
+    color: red !important;
+}
+.color-black{
+    color: black !important;
+}
+.image-bg {
+    max-width: 100%;
+    height: auto;
+    background-image: url('http://menuegypt.com/images/website_background_HD_3.jpg');
+    background-color: #cccccc;
+}
+
+.home {
+    background: center no-repeat #795548;
+    background-size: cover !important;
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+    height: 100%;
+        background-attachment: fixed!important
+}
+.register{
+    background: center no-repeat black;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.5;
+}
+.filter-none{
+    filter: none;
+}
+.opacity-1{
+    opacity: 1 !important;
+}
+.panel-transparent{
+    background-color: rgba(235,235,235, 0.5);
+}
+@media (max-width:767px) {
+    .home {
+        background-size: none!important;
+        background-attachment: fixed!important
+    }
+}
+.layout-relative-height100 {
+    min-height: 100%;
+    position: relative
+}
+
+.grey {
+    background-color: #eee;
+}
+
+.home .header {
+    margin-top: 30px
+}
+.border-bottom{
+    border-bottom: 1 px solid black !important;
+}
+
+.margin-top-16 {
+    margin-top: 16px;
+}
+.margin-top-50 {
+    margin-top: 50px;
+}
+.margin-bottom-16{
+    margin-bottom: 16px;
+}
+.margin-left-16
+{
+    margin-left: 16px;
+}
+.margin-right-16{
+    margin-right: 16px;
+}
+
+.home-logo {
+    margin-top: 15%;
+}
+
+.height-30 {
+    height: 54px;
+}
+.height-150{
+    max-height: 150px;
+}
+.height-80p{
+    max-height: 80% !important;
+}
+.search-icon{
+    background-color: white;
+    border: 0px;
+    outline:0px;
+}
+.input-group-addon{
+    padding-right: 0px;
+}
+.search-box{
+    
+    padding: 20px 10px 20px 10px;
+    background: #fff;
+    width: 500px;
+    height: 54px;
+    border: none !important;
+    outline: none !important;
+    color: #3e4152;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    z-index: 2 !important;
+    box-shadow: none;
+    
+}
+.reg_table{
+    width: 100%;
+}
+.reg_table tr td:nth-child(odd){
+    width: 40%;
+}
+.reg_table tr td:nth-child(even){
+    width: 60%;
+}
+.search-box:focus{
+    box-shadow: none;
+    outline: none;
+}
+.input-bottom {
+border-top: none !important;
+    border-bottom: 1px solid #eee !important;
+    border-left: none !important;
+    border-right: none !important;    
+    outline: none !important;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    box-shadow: none;
+    transition: border 1s ease; 
+    border-radius: 0px  !important;
+    
+}
+.input-bottom-blue
+{
+border-top: none !important;
+    border-bottom: 1px solid #b5a898 !important;
+    border-left: none !important;
+    border-right: none !important;    
+    outline: none !important;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    box-shadow: none;
+    transition: border 1s ease; 
+    border-radius: 0px  !important;
+}
+.input-bottom:focus{
+    outline: none !important;
+    box-shadow: none !important;
+        transition: width 1 ease, border 1s ease;
+	border-bottom: 1px solid blue !important;
+}
+.input-bottom-blue:focus{
+    outline: none !important;
+    box-shadow: none !important;
+        transition: width 1 ease, border 1s ease;
+	border-bottom: 1px solid green !important;
+}
+.line{
+    border-top:1px solid #da1515;
+}
+.line-black{
+    border-top: 1px solid black;
+}
+.line-black-3{
+    border-top: 3px solid black;
+}
+.scroll{
+    overflow-y: scroll;
+}
+#Registration_seller{
+ max-width: 100%;
+    height: auto;
+    background-image: url('https://www.volusia.org/resources/background-medium.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+.error{
+    color: red;
+    font-family: "Roboto", sans-serif; 
+    font-size: 14px;
+    font-weight: 300;
+}

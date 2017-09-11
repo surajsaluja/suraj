@@ -1,0 +1,131 @@
+<body class="content" style="max-width:1200px" ng-controller="controller_restaurant">
+    
+<nav class="collapse sidebar top sidebar-hide" style="z-index:20;width:250px" id="collapse">
+    <div class="container container-relative padding-16">
+    <i class="hide-large fa fa-times top-right button" ng-click="side_close()"></i>
+        <h3 class="font-wide demo">Logo</h3>
+    </div>
+</nav>
+<header class="bar bg-black hide-large font-24">
+    <div class="font-wide padding-16 bar-item">Logo</div>
+    <i class="fa fa-bars bar-item float-right button"  ng-click="side_open()"></i>
+</header>
+    <div class="overlay" id="overlay" ng-click="side_close()"></div>
+<div class="hide-large" style="margin-top:10px"></div>
+    <div class="main-content" style="margin-left:250px">
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 list">
+                <div class="row bg-grey">
+                    <div class="restaurant_top">
+                        <span class="restauarant_top_catagory">Snacks</span>
+                        <span class="restaurant_number">110 Restraunts In Your Area</span>
+                        
+                        <ul class="">
+                            <li class="">Price -- High to Low</li>
+                            <li class="">Price -- Low to High</li>
+                            <li class="active">Popularity</li>
+                            <span class="sort_span">Sort By</span>
+                        </ul>
+                    </div>
+                    <div class="restaurants bg-grey padding-left-right-16">
+                        <div class="">
+                            <div class="">
+                        <div class="restaurant_panel shadow-hover corner-round" ng-repeat="restaurants in restaurant_data">
+                            <div ng-click="products_show(restaurants)">
+                            <div class="row">
+                            <div class="restaurant-image col-md-2 col-xs-4">
+                            <img src="images/24-noodles.jpg" />
+                            </div>
+                            <div class="col-md-9 col-xs-7 Restaurant_Description">
+                            <div class="row">
+                            <div class="col-md-10 Restaurant_panel_name">
+                                {{restaurants.restaurant.name}}
+                            </div>
+                            <div class="col-md-2 Price">
+                            <span class="Restaurant_ItemQty_span">{{restaurants.total_items}}</span><span class="Restaurant_items_span"> Items</span> 
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-10 Restaurant_product_types">
+                            <span ng-repeat="x in restaurants.restaurant.catagory">
+                            {{x}}
+                                </span>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="Restaurant_panel_bottom">
+                            <div class="Restaurant_bottom_section col-md-6"><i class="fa fa-star"></i><span clas="Restaurant_rating">4.0</span></div>
+                            <div class="Restaurant_bottom_section col-md-6"><i class="fa fa-star"></i><span clas="Restaurant_rating">4.0</span></div>
+                            </div>
+                            </div>
+                            </div>  
+                            </div>      
+                        </div>
+                            
+                            <div class="restaurant-products hide" id={{restaurants.id}}>
+                                    <div class="row">
+                                        <div class="col-md-4 col-xs-6" ng-repeat="products in restaurants.products">
+                                            <div class="col-xs-10 col-offset-1 shadow-hover" ng-click="element_show('product')">
+                                            <div class="restaurant-item">
+                                                <img src="images/24-noodles.jpg" style="width:100%">
+                                                
+                                                <p><span class="hide">{{products.product_id}}</span>
+                                                    <span>{{products.description.product_name}}</span><br><b><span>Rs. {{products.description.price}}</span></b></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div id="product" class="modal hide">
+  <div class="modal-content animate-zoom" style="padding:32px">
+    <div class="white center">
+      <i ng-click="element_hide('product')" class="fa fa-remove right button transparent"></i>
+        <br>
+      <h2 class="font-wide center">Order Product</h2>
+      <div class="row padding-16">
+        <div class="col-md-5">
+          <div class="img">
+            <img src="images/24-noodles.jpg">
+            </div>
+          </div>
+          <div class="col-md-7">
+              <div>
+            <span id="modal_product_id" class="hide">{{modal.id}}</span>
+              <div class="font-500 font-Roboto font-left font-24">Burger Crispy</div>
+                <br />
+                <div class="font-100 font-Roboto font-left font-18">Burger King</div>
+                  <br>
+                <div class="font-300 font-Roboto font-18 font-right">Rs 300</div>
+              </div>
+              <br/>
+
+              <div class="quantity center">
+              <button class="button-circle">-</button>
+                  <span>1</span>
+              <button class="button-circle">+</button>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div>
+      <button class="btn btn-danger btn-half inline-block-display"><i class="fa fa-cart-plus" aria-hidden="true"></i>
+&nbsp;Add To Cart</button>
+    <button class="btn btn-warning btn-half inline-block-display"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;Buy Now</button>
+      </div>
+  </div>
+</div>
+    </div>
+<script>
+
+        
+</script>
+</body>
